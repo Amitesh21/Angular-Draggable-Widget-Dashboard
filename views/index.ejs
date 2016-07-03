@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html ng-app="app">
+  <head>
+    <title>Widget dragging demo</title>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
+    <script src="./build/js/ng-draggable-widgets.js"></script>
+    <script src="./demo.js"></script>
+    <link rel="stylesheet" type="text/css" href="css/demo.css">
+
+    <!-- new files -->
+    <!-- JQuery -->
+    <script  type="text/javascript" src="../assets/bower_components/jquery/dist/jquery.js"></script>
+    <script  type="text/javascript" src="assets/bower_components/jquery-ui/jquery-ui.js"></script>
+    <script  type="text/javascript" src="assets/lib/jquery.ui.touch-punch.min.js"></script>
+    <!-- Bootstrap -->
+    <link rel="stylesheet" href="assets/bower_components/bootstrap/dist/css/bootstrap.min.css">
+    <script  type="text/javascript" src="assets/bower_components/bootstrap/dist/js/bootstrap.min.js"></script>
+    <!--font Awesome-->
+    <link href="assets/bower_components/fontawesome/css/font-awesome.min.css" rel="stylesheet">
+    <!--Angular -->
+    <script  type="text/javascript" src="assets/bower_components/angular/angular.min.js"></script> 
+    <script  type="text/javascript" src="assets/bower_components/angular-ui-sortable/sortable.js"></script> 
+    <script  type="text/javascript" src="assets/bower_components/angular-route/angular-route.min.js"></script>
+    <!-- chartjs -->
+    <script  type="text/javascript" src="assets/bower_components/Chart.js/Chart.min.js"></script>
+    <script  type="text/javascript" src="assets/bower_components/angular-chart.js/dist/angular-chart.js"></script>
+    <link rel="stylesheet" href="assets/bower_components/angular-chart.js/dist/angular-chart.css">
+    <!-- custom configuration-->
+    <link rel="stylesheet" href="assets/css/dashboard.css">
+    <link href="assets/css/prettyPhoto.css" rel="stylesheet">
+    <link href="assets/css/main.css" rel="stylesheet">
+    <link href="assets/css/responsive.css" rel="stylesheet">
+    <!-- ng-Dialog box  -->
+    
+    <link rel="stylesheet" href="css/ngDialog.css">
+    <link rel="stylesheet" href="css/ngDialog-Default.css">
+    
+    
+    <style type="text/css">
+      .divbutton {
+        /*height: 100px;*/
+        /*background: #0000ff;*/
+      }
+    </style>
+    
+  </head>
+  <body ng-controller="dragController">
+
+    <script type="text/javascript">
+      $(document).ready(function () {
+                  $(document).on('mouseenter', '.divbutton', function () {
+                      $(this).find(":button").show();
+                  }).on('mouseleave', '.divbutton', function () {
+                      $(this).find(":button").hide();
+                  });
+                });
+    </script>
+    
+      <div drag-group="widgets" style="padding-left:300px">
+        <div ng-repeat="widget in widgets" draggable-widget="widget" draggable-widget-callback="moveWidget" class="divbutton x_small_widget">
+          <div draggable-widget-handle >
+          <div class="portlet" id="widgetFeeds">
+            <div class="portlet-header">
+              
+              <div class="widgetHeadRight">
+                <div class="widgetTilte"><span class="widgetTitleText">{{widget.title}}</span></div>
+              </div>
+            </div>
+                          
+          </div>
+          </div>
+          <button ng-dialog={{widget.dialodId}} ng-dialog-class="ngdialog-theme-default" ng-dialog-show-close="false" style="display: none;" class="btn btn-primary">Quick View</button>
+          <button style="display: none;" type="button" class="btn btn-warning" ng-click="allergies();">See More -></button>
+        </div>
+      </div>
+    
+    <div>
+      <script type="text/ng-template" id="did1">
+        <div class="ngdialog-message">
+          <h3>Allergy Details</h3>
+                    <div id="includedContent"></div>
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>Allergy</th>
+                          <th>Symptoms</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      <% for(var i=0; i<allergy.length; i++) {%>
+                        <tr>
+                          <td><%=allergy[i].disease%></td>
+                          <td><%=allergy[i].symptoms%></td>
+                        </tr>
+                        <% } %>
+                      </tbody>
+                    </table>
+        </div>
+        <div class="ngdialog-buttons">
+            
+        </div>
+      </script>
+
+      <script type="text/ng-template" id="did2">
+        <div class="ngdialog-message">
+          <h3>Patient Visit Details</h3>
+                    <div id="includedContent"></div>
+                    <table class="table table-bordered">
+                      <thead>
+                        <tr>
+                          <th>Venue</th>
+                          <th>Date</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                      <% for(var i=0; i<visits.length; i++) {%>
+                        <tr>
+                          <td><%=visits[i].venue%></td>
+                          <td><%=visits[i].date%></td>
+                        </tr>
+                        <% } %>
+                      </tbody>
+                    </table>
+                  <a href="#" ng-click="closeSecond()">Close here</a>
+        </div>
+        
+      </script>
+    </div> 
+
+      <script src='js/ngDialog.js'></script>
+  </body>
+  <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src='//www.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+</html>
