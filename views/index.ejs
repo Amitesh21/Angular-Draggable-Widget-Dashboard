@@ -2,54 +2,31 @@
 <html lang="en" ng-app="app">
   <head>
     <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
-    <!-- Meta, title, CSS, favicons, etc. -->
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-
     <title>Draggable Widgets Angular</title>
-    <!-- JQuery -->
-    <script  type="text/javascript" src="../assets/bower_components/jquery/dist/jquery.js"></script>
+    
     <!-- Bootstrap -->
-    <link href="../vendors/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="css/bootstrap.min.css" rel="stylesheet">
     <!-- Font Awesome -->
-    <link href="../vendors/font-awesome/css/font-awesome.min.css" rel="stylesheet">
-    <!-- NProgress -->
-    <link href="../vendors/nprogress/nprogress.css" rel="stylesheet">
-    <!-- iCheck -->
-    <link href="../vendors/iCheck/skins/flat/green.css" rel="stylesheet">
-    <!-- bootstrap-progressbar -->
-    <link href="../vendors/bootstrap-progressbar/css/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet">
-    <!-- JQVMap -->
-    <link href="../vendors/jqvmap/dist/jqvmap.min.css" rel="stylesheet"/>
-
+    <link href="css/font-awesome.min.css" rel="stylesheet">
     <!-- Custom Theme Style -->
-    <link href="../build/css/custom.min.css" rel="stylesheet">
-
-    <!-- new files -->
-    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
-    <script src="./build/js/ng-draggable-widgets.js"></script>
-    <script src="./demo.js"></script>
+    <link href="css/custom.min.css" rel="stylesheet">
     <link rel="stylesheet" type="text/css" href="css/demo.css">
-
-    <script  type="text/javascript" src="assets/bower_components/angular-route/angular-route.min.js"></script>
-    <!-- custom configuration-->
-    <link rel="stylesheet" href="assets/css/dashboard.css">
-    <!-- ng-Dialog box  -->
-    
-    <link rel="stylesheet" href="css/ngDialog.css">
-    <link rel="stylesheet" href="css/ngDialog-Default.css">
-    
-     <style type="text/css">
-      .divbutton {
-        /*height: 100px;*/
-        /*background: #0000ff;*/
-      }
-    </style>
+    <!-- JQuery -->
+    <script  type="text/javascript" src="js/jquery.js"></script>
+    <!-- angular -->
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.3.15/angular.js"></script>
+    <!-- Widget and dashboard -->
+    <link rel="stylesheet" href="css/dashboard.css">
+    <script src="js/ng-draggable-widgets.js"></script>
+    <script src="js/demo.js"></script>
+    <script type="text/javascript" src="js/angular-route.min.js"></script>
   </head>
 
   <body class="nav-md" ng-controller="dragController">
-
+  <!-- quick view and see more on hover -->
     <script type="text/javascript">
       $(document).ready(function () {
                   $(document).on('mouseenter', '.divbutton', function () {
@@ -59,125 +36,9 @@
                   });
                 });
     </script>
+
     <div class="container body">
-      <div class="main_container">
-        <div class="col-md-3 left_col">
-          <div class="left_col scroll-view">
-            <div class="navbar nav_title" style="border: 0;">
-              <a href="index.html" class="site_title"><img style="height:25px;width:40px "src="images/logo.png" alt="..."> <span>Angular Draggable widgets</span></a>
-            </div>
-
-            <div class="clearfix"></div>
-
-            <!-- menu profile quick info -->
-            <div class="profile">
-              <div class="profile_pic">
-                <img src="images/ami.jpg" alt="..." class="img-circle profile_img">
-              </div>
-              <br>
-            </div>
-            <!-- /menu profile quick info -->
-
-            <br>
-
-            <!-- sidebar menu -->
-            <div id="sidebar-menu" class="main_menu_side hidden-print main_menu">
-              <div class="menu_section">
-                <span style="font-size:medium">Amitesh Jaiswal</span>
-                    <br><br>
-                <ul class="nav side-menu">
-                  <li><a href="#"><i class="fa fa-edit"></i> Allergy Details </a></li>
-                  <li><a><i class="fa fa-table"></i> Medications</a></li>
-                  <li><a><i class="fa fa-desktop"></i> Doctor Notes</a></li>
-                  <li><a><i class="fa fa-clone"></i> Profile Update</a></li>
-                  <li><a><i class="fa fa-bar-chart-o"></i>Analysis <span class="fa fa-chevron-down"></span></a>
-                    <ul class="nav child_menu">
-                      <li><a href="fixed_sidebar.html">Twitter</a></li>
-                      <li><a href="fixed_footer.html">Realtime</a></li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-
-            </div>
-            <!-- /sidebar menu -->
-
-            <!-- /menu footer buttons -->
-            <div class="sidebar-footer hidden-small">
-              <a data-toggle="tooltip" data-placement="top" title="Settings">
-                <span class="glyphicon glyphicon-cog" aria-hidden="true"></span>
-              </a>
-              <a data-toggle="tooltip" data-placement="top" title="Logout">
-                <span class="glyphicon glyphicon-off" aria-hidden="true"></span>
-              </a>
-            </div>
-            <!-- /menu footer buttons -->
-          </div>
-        </div>
-
-        <!-- top navigation -->
-        <div class="top_nav">
-          <div class="nav_menu">
-            <nav>
-              <div class="nav toggle">
-                <a id="menu_toggle"><i class="fa fa-bars"></i></a>
-              </div>
-
-              <ul class="nav navbar-nav navbar-right">
-                <li class="">
-                  <a href="javascript:;" class="user-profile dropdown-toggle" data-toggle="dropdown" aria-expanded="false">
-                    <!-- <img src="images/img.jpg" alt="">John Doe -->
-                    <span class=" fa fa-angle-down"></span>
-                  </a>
-                  <ul class="dropdown-menu dropdown-usermenu pull-right">
-                    <li><a href="javascript:;"> Profile</a></li>
-                    <li>
-                      <a href="javascript:;">
-                        <span class="badge bg-red pull-right">50%</span>
-                        <span>Settings</span>
-                      </a>
-                    </li>
-                    <li><a href="javascript:;">Help</a></li>
-                    <li><a href="login.html"><i class="fa fa-sign-out pull-right"></i> Log Out</a></li>
-                  </ul>
-                </li>
-
-                <li role="presentation" class="dropdown">
-                  <a href="javascript:;" class="dropdown-toggle info-number" data-toggle="dropdown" aria-expanded="false">
-                    <i class="fa fa-envelope-o"></i>
-                    <span class="badge bg-green">6</span>
-                  </a>
-                  <ul id="menu1" class="dropdown-menu list-unstyled msg_list" role="menu">
-                    <li>
-                      <a>
-                        <!-- <span class="image"><img src="images/img.jpg" alt="Profile Image" /></span> -->
-                        <span>
-                          <span>John Smith</span>
-                          <span class="time">3 mins ago</span>
-                        </span>
-                        <span class="message">
-                          Film festivals used to be do-or-die moments for movie makers. They were where...
-                        </span>
-                      </a>
-                    </li>
-                    <li>
-                      <div class="text-center">
-                        <a>
-                          <strong>See All Alerts</strong>
-                          <i class="fa fa-angle-right"></i>
-                        </a>
-                      </div>
-                    </li>
-                  </ul>
-                </li>
-              </ul>
-            </nav>
-          </div>
-        </div>
-        <!-- /top navigation -->
-
         <!-- page content -->
-        <div role="main">
             <!-- Displaying all widgets using ng-repeat -->
           <div drag-group="widgets" style="padding-left:300px">
             <div ng-repeat="widget in widgets" draggable-widget="widget" draggable-widget-callback="moveWidget" class="divbutton x_small_widget">
@@ -195,116 +56,16 @@
               <button style="display: none;" type="button" class="btn btn-warning" ng-click="allergies();">See More -></button>
             </div>
           </div>
-        </div>
         <!-- /page content -->
-
-        <!-- footer content -->
-        <footer>
-          <div class="pull-right">
-            @CopyRight
-          </div>
-          <div class="clearfix"></div>
-        </footer>
-        <!-- /footer content -->
-      </div>
     </div>
 
-    <div>
-      <!-- Allergy Dialog details -->
-      <script type="text/ng-template" id="did1">
-        <div class="ngdialog-message">
-          <h3>Allergy Details</h3>
-                    <div id="includedContent"></div>
-                    <table class="table table-bordered">
-                      <thead>
-                        <tr>
-                          <th>Allergy</th>
-                          <th>Symptoms</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                      <% for(var i=0; i<allergy.length; i++) {%>
-                        <tr>
-                          <td><%=allergy[i].disease%></td>
-                          <td><%=allergy[i].symptoms%></td>
-                        </tr>
-                        <% } %>
-                      </tbody>
-                    </table>
-        </div>
-        <div class="ngdialog-buttons">
-            
-        </div>
-      </script>
-
-      <script type="text/ng-template" id="did2">
-      <!-- Patient visits Dialog details -->
-        <div class="ngdialog-message">
-          <h3>Patient Visit Details</h3>
-                    <div id="includedContent"></div>
-                    <table class="table table-bordered">
-                      <thead>
-                        <tr>
-                          <th>Venue</th>
-                          <th>Date</th>
-                        </tr>
-                      </thead>
-                      <tbody>
-                      <% for(var i=0; i<visits.length; i++) {%>
-                        <tr>
-                          <td><%=visits[i].venue%></td>
-                          <td><%=visits[i].date%></td>
-                        </tr>
-                        <% } %>
-                      </tbody>
-                    </table>
-                  <a href="#" ng-click="closeSecond()">Close here</a>
-        </div>
-        
-      </script>
-    </div> 
-
     <!-- jQuery -->
-    <script src="../vendors/jquery/dist/jquery.min.js"></script>
+    <script src="js/jquery.min.js"></script>
     <!-- Bootstrap -->
-    <script src="../vendors/bootstrap/dist/js/bootstrap.min.js"></script>
-    <!-- FastClick -->
-    <script src="../vendors/fastclick/lib/fastclick.js"></script>
-    <!-- NProgress -->
-    <script src="../vendors/nprogress/nprogress.js"></script>
-    <!-- Chart.js -->
-    <script src="../vendors/Chart.js/dist/Chart.min.js"></script>
-    <!-- gauge.js -->
-    <script src="../vendors/gauge.js/dist/gauge.min.js"></script>
-    <!-- bootstrap-progressbar -->
-    <script src="../vendors/bootstrap-progressbar/bootstrap-progressbar.min.js"></script>
-    <!-- iCheck -->
-    <script src="../vendors/iCheck/icheck.min.js"></script>
-    <!-- Skycons -->
-    <script src="../vendors/skycons/skycons.js"></script>
-    <!-- Flot -->
-    <script src="../vendors/Flot/jquery.flot.js"></script>
-    <script src="../vendors/Flot/jquery.flot.pie.js"></script>
-    <script src="../vendors/Flot/jquery.flot.time.js"></script>
-    <script src="../vendors/Flot/jquery.flot.stack.js"></script>
-    <script src="../vendors/Flot/jquery.flot.resize.js"></script>
-    <!-- Flot plugins -->
-    <script src="js/flot/jquery.flot.orderBars.js"></script>
-    <script src="js/flot/date.js"></script>
-    <script src="js/flot/jquery.flot.spline.js"></script>
-    <script src="js/flot/curvedLines.js"></script>
-    <!-- JQVMap -->
-    <script src="../vendors/jqvmap/dist/jquery.vmap.js"></script>
-    <script src="../vendors/jqvmap/dist/maps/jquery.vmap.world.js"></script>
-    <script src="../vendors/jqvmap/examples/js/jquery.vmap.sampledata.js"></script>
-    <!-- bootstrap-daterangepicker -->
-    <script src="js/moment/moment.min.js"></script>
-    <script src="js/datepicker/daterangepicker.js"></script>
-
+    <script src="js/bootstrap.min.js"></script>
     <!-- Custom Theme Scripts -->
-    <script src="../build/js/custom.min.js"></script>
+    <script src="js/custom.min.js"></script>
     <script src='js/ngDialog.js'></script>
     
-    <!-- /gauge.js -->
   </body>
 </html>
